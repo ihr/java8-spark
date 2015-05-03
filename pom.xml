@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ingini.spark</groupId>
+    <artifactId>java8</artifactId>
+    <version>0.1.0</version>
+
+    <name>Ingini :: Spark :: Java 8</name>
+
+    <properties>
+
+        <!-- Spark -->
+        <spark-core_2.10.version>1.3.1</spark-core_2.10.version>
+
+        <!-- general purpose tools -->
+        <guava.version>18.0</guava.version>
+
+        <!-- Testing dependencies -->
+        <assertj.version>1.7.1</assertj.version>
+        <junit.version>4.12</junit.version>
+
+        <!-- Specify Java Compiler Version -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>ihristov</id>
+            <name>Ivan Hristov</name>
+            <email>hristov[DOT]iv[AT]gmail[DOT]com</email>
+        </developer>
+    </developers>
+
+    <dependencies>
+
+        <!-- Spark -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>${spark-core_2.10.version}</version>
+        </dependency>
+
+        <!-- general purpose tools -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
+
