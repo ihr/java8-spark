@@ -22,7 +22,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.junit.Test;
 import scala.Tuple2;
 
 import java.io.Serializable;
@@ -41,8 +40,8 @@ public class WordsCounterSpark implements Serializable {
 
         JavaRDD<String> input = sc.textFile(source);
 
-        JavaPairRDD<String, Integer> counts = input.flatMap(x -> Arrays.asList(x.split(REGEX)))
-                .mapToPair(x -> new Tuple2(x, 1))
+        JavaPairRDD<String, Integer> counts = input.flatMap(line -> Arrays.asList(line.split(REGEX)))
+                .mapToPair(word -> new Tuple2(word, 1))
                 .reduceByKey((x, y) -> (Integer) x + (Integer) y)
                 .sortByKey();
 
